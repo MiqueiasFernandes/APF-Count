@@ -1,0 +1,88 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "APF set",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "ALI": {
+      "type": "array",
+      "items": {
+        "name": {
+          "type": "string"
+        },
+        "tr": {
+          "type": "number"
+        },
+        "td": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "AIE": {
+      "type": "array",
+      "items": {
+        "name": {
+          "type": "string"
+        },
+        "tr": {
+          "type": "number"
+        },
+        "td": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "EE": {
+      "type": "array",
+      "items": {
+        "name": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "number",
+          "minimum": 1
+        },
+        "td": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    },
+    "CE": {
+      "type": "array",
+      "items": {
+        "name": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "number",
+          "minimum": 1
+        },
+        "td": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    },
+    "SE": {
+      "type": "array",
+      "items": {
+        "name": {
+          "type": "string"
+        },
+        "ar": {
+          "type": "number",
+          "minimum": 1
+        },
+        "td": {
+          "type": "number",
+          "minimum": 1
+        }
+      }
+    }
+  }
+}

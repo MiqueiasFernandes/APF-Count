@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:stretchColumns="5">
+
+        <TextView
+            android:id="@+id/name"
+            android:textStyle="bold"
+            android:text="Resultados da contagem"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+
+    <TableRow>
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="6dp"
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="Contagem INDICATIVA"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/indicativa_pf"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0PF"
+            android:padding="1dip"/>
+    </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+    <TableRow>
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="ARQUIVO"
+            android:padding="1dip"/>
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="QTD"
+            android:padding="1dip"/>
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="PF"
+            android:padding="1dip"/>
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+        <TextView
+            android:id="@+id/indicativa_ali"
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="ALI"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/indicativa_ali_qtd"
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="0"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/indicativa_ali_pf"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0"
+            android:padding="1dip"/>
+    </TableRow>
+    <TableRow>
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="AIE"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/indicativa_aie_qtd"
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="0"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/indicativa_aie_pf"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0"
+            android:padding="1dip"/>
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="Contagem ESTIMATIVA"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/estimativa_pf"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0PF"
+            android:padding="1dip"/>
+    </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="1"
+            android:text="COMPLEXIDADE >>"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="2"
+            android:text="B"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="3"
+            android:text="M"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="4"
+            android:text="A"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="5"
+            android:text="PF"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="ALI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ali_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ali_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ali_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/estimativa_ali_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:text="AIE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_aie_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_aie_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_aie_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/estimativa_aie_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="EE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ee_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ee_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ee_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/estimativa_ee_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:text="CE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ce_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ce_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_ce_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/estimativa_ce_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="SE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_se_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_se_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/estimativa_se_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/estimativa_se_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+    <TableRow>
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="Contagem DETALHADA"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/detalhada_pf"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0PF"
+            android:padding="1dip"/>
+    </TableRow>
+    <View
+        android:layout_height="1dip"
+        android:background="#FF909090" />
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="1"
+            android:text="COMPLEXIDADE >>"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="2"
+            android:text="B"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="3"
+            android:text="M"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="4"
+            android:text="A"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_column="5"
+            android:text="PF"
+            android:padding="1dip"
+            android:textAlignment="center"/>
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="ALI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ali_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ali_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ali_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/detalhada_ali_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:text="AIE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_aie_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_aie_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_aie_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/detalhada_aie_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="EE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ee_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ee_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ee_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/detalhada_ee_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow>
+
+        <TextView
+            android:layout_column="1"
+            android:text="CE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ce_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ce_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_ce_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/detalhada_ce_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow">
+
+        <TextView
+            android:layout_column="1"
+            android:text="SE"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_se_cb"
+            android:layout_column="2"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_se_cm"
+            android:layout_column="3"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/detalhada_se_ca"
+            android:layout_column="4"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/detalhada_se_pf"
+            android:layout_gravity="center"
+            android:layout_column="5"
+            android:text="0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </TableRow>
+
+
+    <TableRow
+        android:visibility="invisible"
+        android:id="@+id/row_extras"
+        >
+        <TextView
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_column="1"
+            android:text="Extras"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/extras_base_pf"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:layout_column="5"
+            android:text="0PF"
+            android:padding="1dip"/>
+    </TableRow>
+    <View
+        android:id="@+id/view_extras"
+        android:layout_height="1dip"
+        android:background="#FF909090"
+        android:visibility="invisible"/>
+    <TableRow
+        android:visibility="invisible"
+        android:id="@+id/row_extras_title">
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="BASE"
+            android:padding="1dip"/>
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="TOTAL"
+            android:padding="1dip"/>
+    </TableRow>
+    <TableRow
+        android:background="@color/midrow"
+        android:visibility="invisible"
+        android:id="@+id/row_extras_esforco">
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="Esforço"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/esforco_base"
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="0"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/esforco_valor"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="0Hrs"
+            android:padding="1dip"/>
+    </TableRow>
+    <TableRow
+        android:visibility="invisible"
+        android:id="@+id/row_extras_custo">
+        <TextView
+            android:textAlignment="center"
+            android:layout_column="1"
+            android:text="Custo"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/custo_base"
+            android:textAlignment="center"
+            android:layout_column="3"
+            android:text="0"
+            android:padding="1dip"/>
+        <TextView
+            android:id="@+id/custo_valor"
+            android:textAlignment="center"
+            android:layout_column="5"
+            android:text="R$ 0"
+            android:padding="1dip"/>
+    </TableRow>
+
+</TableLayout>
