@@ -32,23 +32,23 @@
                 android:layout_below="@id/titulo"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true"/>
-    <EditText
-        android:layout_marginTop="20dp"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPostalAddress"
-        android:layout_below="@id/titulo"
-        android:hint="URL:"
-        android:id="@+id/txtURL"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@id/btnin"
-        android:layout_toStartOf="@id/btnin"
-        />
+
+            <AutoCompleteTextView
+                android:layout_marginTop="20dp"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:inputType="textPostalAddress"
+                android:layout_below="@id/titulo"
+                android:hint="URL:"
+                android:id="@+id/txtURL"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@id/btnin"
+                android:layout_toStartOf="@id/btnin" />
 
     <EditText
         android:layout_marginTop="20dp"
-        android:height="200dp"
+        android:height="150dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:inputType="textMultiLine"
@@ -74,16 +74,37 @@
         android:id="@+id/progressBar"
         android:layout_below="@id/button"/>
 
-    <TextView
-        android:text="..."
-        android:layout_marginTop="10dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/progressBar"
-        android:visibility="invisible"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/lblprocess"
-        />
+            <TextView
+                android:text="..."
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/progressBar"
+                android:visibility="invisible"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/lblprocess"
+                />
+
+            <TextView
+                android:text="Open recentes:"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/lblprocess"
+                android:id="@+id/lblrecents"
+                />
+
+            <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lblprocess"
+            android:layout_marginTop="6dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+            android:id="@+id/recentes"
+                android:layout_alignLeft="@+id/button"
+                android:layout_alignStart="@+id/button"></Spinner>
+
 
         </RelativeLayout>
     </ScrollView>

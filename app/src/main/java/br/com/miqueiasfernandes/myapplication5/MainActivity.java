@@ -1,6 +1,7 @@
 package br.com.miqueiasfernandes.myapplication5;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Handler;
@@ -8,9 +9,13 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,6 +39,8 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Set;
+import java.util.TreeSet;
 
 import static br.com.miqueiasfernandes.myapplication5.MainActivity.COMPLEXIDADE.ALTA;
 import static br.com.miqueiasfernandes.myapplication5.MainActivity.COMPLEXIDADE.BAIXA;
@@ -153,6 +160,10 @@ final String pattern =
         Fabric.with(this, new Crashlytics());
         setContentView(R.layout.activity_main);
 
+        sharedPref = getSharedPreferences("APFcount", MODE_PRIVATE);
+        urls = sharedPref.getStringSet("urls", new TreeSet<String>());
+        projetos = sharedPref.getStringSet("projetos", new TreeSet<String>());
+
         setJson(sample);
 
         ((Button) findViewById(R.id.button)).setOnClickListener(new View.OnClickListener() {
@@ -167,14 +178,68 @@ final String pattern =
                 importar();
             }
         });
+
+        ProgressBar progressBar = (ProgressBar) findViewById(R.id.progressBar);
+        progressBar.setProgress(0);
+        progressBar.setVisibility(View.INVISIBLE);
+        findViewById(R.id.lblprocess).setVisibility(View.INVISIBLE);
+
+        atualizaUrls();
+        atualizaProjetos();
+
+        ((Spinner)
+                findViewById(R.id.recentes)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                try {
+                    String projeto = (String) adapterView.getItemAtPosition(i);
+                    projeto = projeto.substring(projeto.indexOf(":") + 1);
+                    new OpenWorkTask().execute(projeto);
+                }catch (Exception ex){
+
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+            }
+        });
     }
 
     public String getURL() {
-        return ((EditText) findViewById(R.id.txtURL)).getText().toString();
+        return ((AutoCompleteTextView) findViewById(R.id.txtURL)).getText().toString();
     }
+
+    public void atualizaUrls(){
+        if(urls != null) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_dropdown_item_1line, urls.toArray(new String[]{}));
+            AutoCompleteTextView textView = (AutoCompleteTextView)
+                    findViewById(R.id.txtURL);
+            textView.setAdapter(adapter);
+        }
+    }
+
+    public void atualizaProjetos(){
+        if(projetos != null) {
+            ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                    android.R.layout.simple_dropdown_item_1line, projetos.toArray(new String[]{}));
+            Spinner textView = (Spinner)
+                    findViewById(R.id.recentes);
+            textView.setAdapter(adapter);
+        }
+    }
+
+   private SharedPreferences sharedPref;
+    private Set<String> urls;
+    private Set<String> projetos;
 
     private void importar() {
        new OpenWorkTask().execute(new String[]{getURL()});
+        urls.add(getURL());
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putStringSet("urls", urls);
+        editor.commit();
+        atualizaUrls();
     }
 
     public void computar() {
@@ -814,6 +879,20 @@ int alis = ali.size(), aies = aie.size(), pfali = alis * 35, pfaie = aies   * 15
     }
 
     public void setJson(String json) {
+
+try {
+    String url = getURL();
+    if(url != null && !url.isEmpty()) {
+        String name = new JSONObject(json).optString("name", "-");
+        projetos.add(name + ":" + getURL());
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putStringSet("projetos", projetos);
+        editor.commit();
+       atualizaProjetos();
+    }
+}catch (Exception ex){
+    informarErro(ex, "armazenar informações de projeto");
+}
         ((EditText) findViewById(R.id.txtJson)).setText(json);
     }
     
